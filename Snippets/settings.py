@@ -8,6 +8,11 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
+
+MainApp.Snippet: (models.W042) Auto-created primary key used when not defining a primary key type, by default 'django.db.models.AutoField'.
+HINT: Configure the DEFAULT_AUTO_FIELD setting or the MainappConfig.default_auto_field attribute to point to a subclass of AutoField, e.g.
+'django.db.models.BigAutoField'.
+
 """
 import os
 from pathlib import Path
@@ -125,3 +130,4 @@ STATICFILES_DIRS = [
   BASE_DIR / "static"
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
