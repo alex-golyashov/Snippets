@@ -1,18 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="container">
+ <div class="container">
         <div class="row">
             <div class="col text-center">
                 <h1>{{ pagename }}</h1>
-                <hr>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <p>На данной страницы будут отображаться все созданные сниппеты.</p>
-                <p>Пока тут просто пример, но скоро заменим реальными сниппетами из БД!</p>
                 <hr>
             </div>
         </div>
@@ -30,7 +22,7 @@
                     </thead>
                     <tbody>
 
-                    {% for i in snippets %}
+                    {% for i in snippets_mine %}
                     <tr>
                         <td scope="row">{{i.id}}</td>
                         <td><a href="{% url 'snippets-details-page' i.id %}">{{i.name}}</a></td>
@@ -39,18 +31,13 @@
                     </tr>
                     {% endfor %}
 
-<!--                    <tr>-->
-<!--                        <td scope="row">2</td>-->
-<!--                        <td><a href="/snippets/2">И ещё один пример</a></td>-->
-<!--                        <td>23.05.2019 11:34</td>-->
-<!--                    </tr>-->
-
                     </tbody>
                 </table>
                 <div align="right">
-                    <i style="color: red">Всего сниппетов: {{ count.id }}</i>
+                    <i style="color: red">Всего сниппетов: {{ count }}</i>
                 </div>
             </div>
         </div>
-    </div>
+ </div>>
+
 {%  endblock %}
