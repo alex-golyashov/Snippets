@@ -31,6 +31,12 @@ def add_snippet_page(request):
             snippet.save()
             return redirect("snippets-page")
 
+def delete_snippet(request, num):
+    snippet = Snippet.objects.get(pk=num)
+    snippet.delete()
+    return redirect("snippets-page")
+    # return redirect(request.META.get('HTTP_REFERER', '/')) - остаться на той же самой странице где были
+
 # Можно так: создать объекты в файле models
 # def snippets_page(request):
 #     context = {'snippets': items,
@@ -42,7 +48,8 @@ def add_snippet_page(request):
 
 def snippets_page(request):
     snippets = Snippet.objects.all()
-    count = Snippet.objects.aggregate(id=Max('id'))
+    # count = Snippet.objects.aggregate(id=Max('id'))
+    count = Snippet.objects.count()
     context = {'pagename': 'Просмотр сниппетов', 'snippets': snippets, 'count': count}
     return render(request, 'pages/view_snippets.html', context)
 

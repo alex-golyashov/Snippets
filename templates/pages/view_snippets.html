@@ -33,7 +33,11 @@
                     {% for i in snippets %}
                     <tr>
                         <td scope="row">{{i.id}}</td>
-                        <td><a href="{% url 'snippets-details-page' i.id %}">{{i.name}}</a></td>
+                        <td>
+                            <a href="{% url 'snippets-details-page' i.id %}">{{i.name}}</a>
+                            <i style="color: blue" class="fa-solid fa-pen-to-square"></i>
+                            <a href="{% url 'snippet-delete' i.id %}"><i class="fa-solid fa-trash"></i></a>
+                        </td>
                         <td>{{i.creation_date}}</td>
                         <td>{{i.user}}</td>
                     </tr>
@@ -48,7 +52,7 @@
                     </tbody>
                 </table>
                 <div align="right">
-                    <i style="color: red">Всего сниппетов: {{ count.id }}</i>
+                    <i style="color: red">Всего сниппетов: {{ count }}</i>
                 </div>
             </div>
         </div>

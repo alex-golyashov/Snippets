@@ -25,7 +25,11 @@
                     {% for i in snippets_mine %}
                     <tr>
                         <td scope="row">{{i.id}}</td>
-                        <td><a href="{% url 'snippets-details-page' i.id %}">{{i.name}}</a></td>
+                        <td>
+                            <a href="{% url 'snippets-details-page' i.id %}">{{i.name}}</a>
+                            <i style="color: blue" class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-trash"></i>
+                        </td>
                         <td>{{i.creation_date}}</td>
                         <td>{{i.user}}</td>
                     </tr>
